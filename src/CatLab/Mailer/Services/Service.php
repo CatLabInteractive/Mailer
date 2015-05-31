@@ -32,5 +32,12 @@ abstract class Service {
 		return 'No body set.';
 	}
 
+	/**
+	 * Empty method to initialize external libraries and al lthat.
+	 */
+	protected function initialize () {
+
+	}
+
 	abstract function send (Mail $mail);
 }

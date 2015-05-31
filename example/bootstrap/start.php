@@ -10,19 +10,19 @@ $app = \Neuron\Application::getInstance ();
 // Set config folder
 \Neuron\Config::folder (__DIR__ . '/../config/');
 
-// Load the router
-$app->setRouter (include ('router.php'));
-
 // Optionally, set an environment
 $hostname = trim (file_get_contents ('/etc/hostname'));
-
 switch ($hostname)
 {
 	case 'my-computer':
 	case 'thijs-home-i7':
+	case 'thijs-i7':
 		\Neuron\Config::environment ('development');
 		break;
 }
+
+// Load the router
+$app->setRouter (include ('router.php'));
 
 // Set the template folder
 \Neuron\Core\Template::addPath (__DIR__ . '/../templates/');

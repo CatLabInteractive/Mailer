@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CatLabInteractive/Neuron.git",
-                "reference": "d879e61343f1c6d35963722be652ea155917ebc7"
+                "reference": "7871bb72b2ac44fd5981c94e0a3db6012ff8e0cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CatLabInteractive/Neuron/zipball/d879e61343f1c6d35963722be652ea155917ebc7",
-                "reference": "d879e61343f1c6d35963722be652ea155917ebc7",
+                "url": "https://api.github.com/repos/CatLabInteractive/Neuron/zipball/7871bb72b2ac44fd5981c94e0a3db6012ff8e0cc",
+                "reference": "7871bb72b2ac44fd5981c94e0a3db6012ff8e0cc",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-05-31 10:42:36"
+            "time": "2015-05-31 11:03:03"
         },
         {
             "name": "mandrill/mandrill",

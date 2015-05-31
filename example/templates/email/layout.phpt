@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -681,7 +680,7 @@
                     <table class="twelve columns">
                       <tr>
                         <td>
-                            <?php echo $message; ?>
+                            <?php echo $content; ?>
                         </td>
                         <td class="expander"></td>
                       </tr>
