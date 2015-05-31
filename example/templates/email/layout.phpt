@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
 
     <style type="text/css">
       /**********************************************
@@ -625,27 +625,27 @@
 
     </style>
   </head>
-  <body>
-    <table class="body">
-      <tr>
-        <td class="center" align="center" valign="top">
-          <center>
+  <body style="min-width: 100%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;margin: 0;padding: 0;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;text-align: left;line-height: 19px;font-size: 14px;background-color: #ECF0F1;width: 100% !important;">
+    <table class="body" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;height: 100%;width: 100%;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;">
+      <tr style="padding: 0;vertical-align: top;text-align: left;">
+        <td class="center" align="center" valign="top" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0;vertical-align: top;text-align: center;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse !important;">
+          <center style="width: 100%;min-width: 580px;">
 
-          <table class="row header">
-            <tr>
-              <td class="center" align="center">
-                <center>
+          <table class="row header" style="border-spacing: 0;border-collapse: collapse;padding: 0px;vertical-align: top;text-align: left;width: 100%;position: relative;">
+            <tr style="padding: 0;vertical-align: top;text-align: left;">
+              <td class="center" align="center" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0;vertical-align: top;text-align: center;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse !important;">
+                <center style="width: 100%;min-width: 580px;">
 
-                  <table class="container">
-                    <tr>
-                      <td class="wrapper last">
+                  <table class="container" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: inherit;width: 580px;margin: 0 auto;">
+                    <tr style="padding: 0;vertical-align: top;text-align: left;">
+                      <td class="wrapper last" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 10px 20px 0px 0px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;position: relative;padding-right: 0px;border-collapse: collapse !important;">
 
-                        <table class="twelve columns">
-                          <tr>
-                            <td class="six sub-columns">
-                              <img class="logo" src="logo.png">
+                        <table class="twelve columns" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;margin: 0 auto;width: 580px;">
+                          <tr style="padding: 0;vertical-align: top;text-align: left;">
+                            <td class="six sub-columns" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0px 0px 10px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;min-width: 0px;padding-right: 10px;width: 50%;border-collapse: collapse !important;">
+                              <img class="logo" src="cid:logo.png" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: 100px;max-width: 100%;float: left;clear: both;display: block;">
                             </td>
-                            <td class="expander"></td>
+                            <td class="expander" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0 !important;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;visibility: hidden;width: 0px;border-collapse: collapse !important;"></td>
                           </tr>
                         </table>
 
@@ -660,29 +660,29 @@
 
           <br>
 
-          <table class="container newsletter-content">
-            <tr>
-              <td>
+          <table class="container newsletter-content" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: inherit;background-color: #FFF;box-sizing: border-box;-webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);-moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);width: 580px;margin: 0 auto;">
+            <tr style="padding: 0;vertical-align: top;text-align: left;">
+              <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse !important;">
 
               <!-- content start -->
-              <table class="row newsletter-inner-content">
-                <tr>
-                  <td class="wrapper last">
+              <table class="row newsletter-inner-content" style="border-spacing: 0;border-collapse: collapse;padding: 30px !important;vertical-align: top;text-align: left;box-sizing: border-box;width: 100%;position: relative;display: block;">
+                <tr style="padding: 0;vertical-align: top;text-align: left;">
+                  <td class="wrapper last" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 10px 20px 0px 0px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;position: relative;padding-right: 0px;border-collapse: collapse !important;">
 
-                    <table class="twelve columns">
-                      <tr>
-                        <td>
-                          <h1><?php echo $title; ?></h1>
+                    <table class="twelve columns" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;margin: 0 auto;width: 580px;">
+                      <tr style="padding: 0;vertical-align: top;text-align: left;">
+                        <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0px 0px 10px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse !important;">
+                          <h1 style="color: #000;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;margin: 0;text-align: left;line-height: 1.3;word-break: normal;font-size: 18px;margin-bottom: 30px;"><?php echo $title; ?></h1>
                         </td>
                       </tr>
                     </table>
 
-                    <table class="twelve columns">
-                      <tr>
-                        <td>
+                    <table class="twelve columns" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;margin: 0 auto;width: 580px;">
+                      <tr style="padding: 0;vertical-align: top;text-align: left;">
+                        <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0px 0px 10px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse !important;">
                             <?php echo $content; ?>
                         </td>
-                        <td class="expander"></td>
+                        <td class="expander" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0 !important;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;visibility: hidden;width: 0px;border-collapse: collapse !important;"></td>
                       </tr>
                     </table>
 
@@ -692,26 +692,27 @@
 
               <br>  <!-- Break Tag for row -->
 
-              <table class="row applinks">
-                <tbody class="block">
-                <tr class="block">
-                  <td class="wrapper last block">
+<!--
+              <table class="row applinks" style="border-spacing: 0;border-collapse: collapse;padding: 30px 0 !important;vertical-align: top;text-align: left;background-color: #00A769;width: 100%;position: relative;display: block;">
+                <tbody class="block" style="display: block;text-align: center;">
+                <tr class="block" style="padding: 0;vertical-align: top;text-align: center;display: block;">
+                  <td class="wrapper last block" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 10px 20px 0px 0px;vertical-align: top;text-align: center;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;display: block;position: relative;padding-right: 0px;border-collapse: collapse !important;">
 
-                    <table class="twelve columns" >
-                      <tr class="block">
-                        <td class="block">
-                          <p class="block">Play QuizWitz fast and easy. Download the app.</p>
+                    <table class="twelve columns" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;margin: 0 auto;width: 580px;">
+                      <tr class="block" style="padding: 0;vertical-align: top;text-align: center;display: block;">
+                        <td class="block" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0px 0px 10px;vertical-align: top;text-align: center;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;display: block;border-collapse: collapse !important;">
+                          <p class="block" style="margin: 0;margin-bottom: 10px;color: #FFF;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 19px;font-size: 14px;display: block;">Play QuizWitz fast and easy. Download the app.</p>
                         </td>
                       </tr>
                     </table>
 
-                    <table class="six columns badges-row">
-                      <tr>
-                        <td class="badges">
-                          <a href="www.google.be"><img class="badge left-badge" src="playstore.png"></a>
+                    <table class="six columns badges-row" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;margin: 0 auto;width: 280px;">
+                      <tr style="padding: 0;vertical-align: top;text-align: left;">
+                        <td class="badges" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0px 0px 10px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse !important;">
+                          <a href="www.google.be" style="color: #00a769 !important;text-decoration: none;border-bottom: 1px solid #00a769;"><img class="badge left-badge" src="playstore.png" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto;max-width: 100%;float: left;clear: both;display: block;border: none;height: 40px;margin-right: 30px;"></a>
                         </td>
-                        <td class="badges">
-                          <a href="www.apple.com"><img class="badge" src="appstore.png"></a>
+                        <td class="badges" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0px 0px 10px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse !important;">
+                          <a href="www.apple.com" style="color: #00a769 !important;text-decoration: none;border-bottom: 1px solid #00a769;"><img class="badge" src="appstore.png" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto;max-width: 100%;float: left;clear: both;display: block;border: none;height: 40px;"></a>
                         </td>
                       </tr>
                     </table>
@@ -720,24 +721,25 @@
                 </tr>
                 </tbody>
               </table>
+-->
               
               <!-- container end below -->
               </td>
             </tr>
           </table>
 
-          <table class="row">
-            <tr>
-              <td class="wrapper last">
+          <table class="row" style="border-spacing: 0;border-collapse: collapse;padding: 0px;vertical-align: top;text-align: left;width: 100%;position: relative;">
+            <tr style="padding: 0;vertical-align: top;text-align: left;">
+              <td class="wrapper last" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 10px 20px 0px 0px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;position: relative;padding-right: 0px;border-collapse: collapse !important;">
 
-                <table class="twelve columns ">
-                  <tr>
-                    <td align="center">
-                      <center>
-                        <p>&copy; QuizWitz Social 2015. All rights reserved. </p>
+                <table class="twelve columns " style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;margin: 0 auto;width: 580px;">
+                  <tr style="padding: 0;vertical-align: top;text-align: left;">
+                    <td align="center" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0px 0px 10px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse !important;">
+                      <center style="width: 100%;min-width: 580px;">
+                        <p style="margin: 0;margin-bottom: 10px;color: #777777;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;text-align: left;line-height: 19px;font-size: 14px;">&copy; QuizWitz Social 2015. All rights reserved. </p>
                       </center>
                     </td>
-                    <td class="expander"></td>
+                    <td class="expander" style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0 !important;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;visibility: hidden;width: 0px;border-collapse: collapse !important;"></td>
                   </tr>
                 </table>
 

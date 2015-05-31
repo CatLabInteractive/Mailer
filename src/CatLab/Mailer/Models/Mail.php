@@ -3,6 +3,7 @@
 namespace CatLab\Mailer\Models;
 
 use CatLab\Mailer\Collections\ContactCollection;
+use CatLab\Mailer\Collections\ImageCollection;
 use Neuron\Core\Template;
 
 class Mail {
@@ -47,11 +48,17 @@ class Mail {
 	 */
 	private $from;
 
+	/**
+	 * @var ImageCollection
+	 */
+	private $images;
+
 	public function __construct ()
 	{
 		$this->to = new ContactCollection ();
 		$this->cc = new ContactCollection ();
 		$this->bcc = new ContactCollection ();
+		$this->images = new ImageCollection ();
 	}
 
 	/**
@@ -200,4 +207,21 @@ class Mail {
 		return $this;
 	}
 
+	/**
+	 * @return ImageCollection
+	 */
+	public function getImages ()
+	{
+		return $this->images;
+	}
+
+	/**
+	 * @param ImageCollection $images
+	 * @return self
+	 */
+	public function setImages ($images)
+	{
+		$this->images = $images;
+		return $this;
+	}
 }
