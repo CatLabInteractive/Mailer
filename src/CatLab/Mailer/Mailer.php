@@ -10,6 +10,7 @@ namespace CatLab\Mailer;
 
 use CatLab\Mailer\Collections\ServiceCollection;
 use CatLab\Mailer\Services\Service;
+use Neuron\Config;
 
 class Mailer {
 
@@ -33,6 +34,16 @@ class Mailer {
 	public static function fromConfig ()
 	{
 		$mailer = self::getInstance ();
+
+		$services = Config::get ('mailer.services');
+		foreach ($services as $k => $v) {
+			$service = MapperFactory::getServiceMapper ()->getFromToken ($k);
+			if ($service) {
+				$service->setFromConfig ($v);
+				$mailer->addService ($service);
+			}
+		}
+
 		return $mailer;
 	}
 
