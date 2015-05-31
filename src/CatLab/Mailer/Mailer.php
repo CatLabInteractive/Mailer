@@ -9,6 +9,8 @@
 namespace CatLab\Mailer;
 
 use CatLab\Mailer\Collections\ServiceCollection;
+use CatLab\Mailer\Exceptions\MailException;
+use CatLab\Mailer\Exceptions\NoServices;
 use CatLab\Mailer\Models\Mail;
 use CatLab\Mailer\Services\Service;
 use Neuron\Config;
@@ -83,9 +85,13 @@ class Mailer {
 
 	/**
 	 * @param Mail $mail
+	 * @throws MailException
 	 */
 	public function send (Mail $mail)
 	{
+		if (count ($this->getServices ()) === 0)
+			throw new NoServices ();
+
 		foreach ($this->getServices () as $service) {
 			if ($service->send ($mail)) {
 				return;
