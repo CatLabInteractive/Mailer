@@ -1,0 +1,26 @@
+{
+  "name": "catlabinteractive/mailer",
+  "type": "library",
+  "description": "Mailer module for Neuron.",
+  "keywords": ["framework"],
+  "homepage":"http://github.com/catlabinteractive/mailer",
+  "license": "MIT",
+
+  "require": {
+    "catlabinteractive/neuron": "dev-master"
+  },
+
+  "authors" : [
+    {
+      "name": "Thijs Van der Schaeghe",
+      "email" : "info@catlab.be",
+      "homepage" : "https://www.catlab.eu/",
+      "role" : "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4" : {
+      "CatLab\\Accounts\\" : "src/CatLab/Mailer"
+    }
+  }
+}
