@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a4e0eabe2de963048872f8ea42425c32",
+    "hash": "c8f74ad13270f7ef1c8208e398dd5026",
     "packages": [
         {
             "name": "catlabinteractive/neuron",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CatLabInteractive/Neuron.git",
-                "reference": "06532614c502643155abcd700557ca726e26c710"
+                "reference": "d879e61343f1c6d35963722be652ea155917ebc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CatLabInteractive/Neuron/zipball/06532614c502643155abcd700557ca726e26c710",
-                "reference": "06532614c502643155abcd700557ca726e26c710",
+                "url": "https://api.github.com/repos/CatLabInteractive/Neuron/zipball/d879e61343f1c6d35963722be652ea155917ebc7",
+                "reference": "d879e61343f1c6d35963722be652ea155917ebc7",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-05-25 20:10:36"
+            "time": "2015-05-31 10:42:36"
         },
         {
             "name": "mandrill/mandrill",

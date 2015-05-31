@@ -41,6 +41,6 @@ class MapperFactory {
 	 * @return ServiceMapper
 	 */
 	public static function getServiceMapper () {
-		return self::getInstance ()->getMapper ('services', '\CatLab\Mailer\ServiceMapper');
+		return self::getInstance ()->getMapper ('services', '\CatLab\Mailer\Mappers\ServiceMapper');
 	}
 }

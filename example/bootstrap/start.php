@@ -2,16 +2,16 @@
 
 error_reporting (E_ALL);
 
-$loader = require_once '../../vendor/autoload.php';
+$loader = require_once __DIR__ . '/../../vendor/autoload.php';
 
 // Start the app
 $app = \Neuron\Application::getInstance ();
 
-// Load the router
-$app->setRouter (include ('router.php'));
-
 // Set config folder
 \Neuron\Config::folder (__DIR__ . '/../config/');
+
+// Load the router
+$app->setRouter (include ('router.php'));
 
 // Optionally, set an environment
 $hostname = trim (file_get_contents ('/etc/hostname'));

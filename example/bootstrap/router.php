@@ -4,3 +4,5 @@
 $router = new \Neuron\Router ();
 
 $mailer = \CatLab\Mailer\Mailer::fromConfig ();
+
+return $router;

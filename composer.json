@@ -21,7 +21,7 @@
   ],
   "autoload": {
     "psr-4" : {
-      "CatLab\\Accounts\\" : "src/CatLab/Mailer"
+      "CatLab\\Mailer\\" : "src/CatLab/Mailer"
     }
   }
 }

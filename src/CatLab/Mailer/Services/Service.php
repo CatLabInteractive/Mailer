@@ -2,6 +2,8 @@
 
 namespace CatLab\Mailer\Services;
 
+use CatLab\Mailer\Models\Mail;
+
 abstract class Service {
 
 	/**
@@ -13,4 +15,22 @@ abstract class Service {
 		return $this;
 	}
 
+	protected function getBodyHTML (Mail $mail) {
+
+		if ($template = $mail->getTemplate ()) {
+			return $template->parse ();
+		}
+
+		else if ($body = $mail->getBody ()) {
+			return $body;
+		}
+
+		else if ($text = $mail->getText ()) {
+			return $text;
+		}
+
+		return 'No body set.';
+	}
+
+	abstract function send (Mail $mail);
 }
