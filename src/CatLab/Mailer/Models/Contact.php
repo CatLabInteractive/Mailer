@@ -10,17 +10,15 @@ class Contact
 {
 	/**
 	 * @param mixed $email
-	 * @return mixed
+	 * @return self
 	 */
 	public static function fromMixed ($email)
 	{
 		if ($email instanceof Contact) {
 			return $email;
-		}
-
-		else {
-			$value = new self ();
-			$value->setEmail ($email);
+		} else {
+			$value = new self();
+			$value->setEmail($email);
 			return $value;
 		}
 	}
