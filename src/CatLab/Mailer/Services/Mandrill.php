@@ -93,9 +93,16 @@ class Mandrill extends Service
 			'html' => $this->getBodyHTML ($mail),
 			'subject' => $mail->getSubject (),
 			'to' => $this->getTo ($mail),
-			'from_email' => $mail->getFrom ()->getEmail (),
 			'images' => $this->getImages ($mail)
 		);
+
+		if ($mail->getFrom()) {
+			$message['from_email'] = $mail->getFrom()->getEmail();
+
+			if ($mail->getFrom()->getName()) {
+				$message['from_name'] = $mail->getFrom()->getName();
+			}
+		}
 
 		$headers = array();
 

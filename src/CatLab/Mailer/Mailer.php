@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: daedeloth
- * Date: 31/05/15
- * Time: 10:15
- */
 
 namespace CatLab\Mailer;
 
@@ -15,8 +9,12 @@ use CatLab\Mailer\Models\Mail;
 use CatLab\Mailer\Services\Service;
 use Neuron\Config;
 
-class Mailer {
-
+/**
+ * Class Mailer
+ * @package CatLab\Mailer
+ */
+class Mailer
+{
 	/** @var self */
 	static $instance;
 
@@ -25,6 +23,9 @@ class Mailer {
 	 */
 	private $services;
 
+	/**
+	 *
+	 */
 	public function __construct ()
 	{
 		$this->services = new ServiceCollection ();
@@ -34,9 +35,9 @@ class Mailer {
 	 * Return mailer (with services) from config.
 	 * @return Mailer
 	 */
-	public static function fromConfig ()
+	public static function fromConfig()
 	{
-		$mailer = self::getInstance ();
+		$mailer = self::getInstance();
 
 		$services = Config::get ('mailer.services');
 		if (!$services) {
@@ -44,7 +45,7 @@ class Mailer {
 		}
 
 		foreach ($services as $k => $v) {
-			$service = MapperFactory::getServiceMapper ()->getFromToken ($k);
+			$service = MapperFactory::getServiceMapper()->getFromToken($k);
 			if ($service) {
 				$service->setFromConfig ($v);
 				$mailer->addService ($service);
@@ -57,7 +58,7 @@ class Mailer {
 	/**
 	 * @return Mailer
 	 */
-	public static function getInstance ()
+	public static function getInstance()
 	{
 		if (!isset (self::$instance)) {
 			self::$instance = new self ();
@@ -69,16 +70,16 @@ class Mailer {
 	 * @param Service $service
 	 * @return self
 	 */
-	public function addService (Service $service)
+	public function addService(Service $service)
 	{
-		$this->services->add ($service);
+		$this->services[] = $service;
 		return $this;
 	}
 
 	/**
 	 * @return ServiceCollection
 	 */
-	public function getServices ()
+	public function getServices()
 	{
 		return $this->services;
 	}
@@ -87,12 +88,12 @@ class Mailer {
 	 * @param Mail $mail
 	 * @throws MailException
 	 */
-	public function send (Mail $mail)
+	public function send(Mail $mail)
 	{
-		if (count ($this->getServices ()) === 0)
+		if (count ($this->getServices()) === 0)
 			throw new NoServices ();
 
-		foreach ($this->getServices () as $service) {
+		foreach ($this->getServices() as $service) {
 			if ($service->send ($mail)) {
 				return;
 			}
