@@ -7,7 +7,7 @@
   "license": "MIT",
 
   "require": {
-    "catlabinteractive/neuron": "dev-master",
+    "catlabinteractive/neuron": "2.*",
 	"mandrill/mandrill": "1.0.*"
   },
 

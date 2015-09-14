@@ -4,26 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c8f74ad13270f7ef1c8208e398dd5026",
+    "hash": "1f828449c654145cd32c9be7de997b0b",
     "packages": [
         {
             "name": "catlabinteractive/neuron",
-            "version": "dev-master",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CatLabInteractive/Neuron.git",
-                "reference": "7871bb72b2ac44fd5981c94e0a3db6012ff8e0cc"
+                "reference": "75114170e52d3cec8d523c4c9eee3820c8a98d80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CatLabInteractive/Neuron/zipball/7871bb72b2ac44fd5981c94e0a3db6012ff8e0cc",
-                "reference": "7871bb72b2ac44fd5981c94e0a3db6012ff8e0cc",
+                "url": "https://api.github.com/repos/CatLabInteractive/Neuron/zipball/75114170e52d3cec8d523c4c9eee3820c8a98d80",
+                "reference": "75114170e52d3cec8d523c4c9eee3820c8a98d80",
                 "shasum": ""
             },
             "require": {
-                "ext-gettext": "*",
-                "nesbot/carbon": "~1.18",
-                "php": ">=5.5.0"
+                "ext-gettext": "*"
             },
             "type": "library",
             "autoload": {
@@ -48,7 +46,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-05-31 11:03:03"
+            "time": "2014-12-16 01:43:12"
         },
         {
             "name": "mandrill/mandrill",
@@ -92,122 +90,12 @@
                 "email"
             ],
             "time": "2014-10-16 21:08:20"
-        },
-        {
-            "name": "nesbot/carbon",
-            "version": "1.19.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/68868e0b02d2d803d0052a59d4e5003cccf87320",
-                "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "symfony/translation": "~2.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Carbon": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brian Nesbitt",
-                    "email": "brian@nesbot.com",
-                    "homepage": "http://nesbot.com"
-                }
-            ],
-            "description": "A simple API extension for DateTime.",
-            "homepage": "http://carbon.nesbot.com",
-            "keywords": [
-                "date",
-                "datetime",
-                "time"
-            ],
-            "time": "2015-05-09 03:23:44"
-        },
-        {
-            "name": "symfony/translation",
-            "version": "v2.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Translation.git",
-                "reference": "cc1907bbeacfcc703c031b67545400d6e7d1eb79"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/cc1907bbeacfcc703c031b67545400d6e7d1eb79",
-                "reference": "cc1907bbeacfcc703c031b67545400d6e7d1eb79",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.9"
-            },
-            "conflict": {
-                "symfony/config": "<2.7"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~2.7",
-                "symfony/intl": "~2.3",
-                "symfony/phpunit-bridge": "~2.7",
-                "symfony/yaml": "~2.2"
-            },
-            "suggest": {
-                "psr/log": "To use logging capability in translator",
-                "symfony/config": "",
-                "symfony/yaml": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Translation\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Translation Component",
-            "homepage": "https://symfony.com",
-            "time": "2015-05-29 14:44:44"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "catlabinteractive/neuron": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
