@@ -1,12 +1,16 @@
 <?php
 
 namespace CatLab\Mailer\Services;
+
 use CatLab\Mailer\Models\Contact;
 use CatLab\Mailer\Models\Mail;
 
-class Mandrill
-	extends Service {
-
+/**
+ * Class Mandrill
+ * @package CatLab\Mailer\Services
+ */
+class Mandrill extends Service
+{
 	/**
 	 * @var \Mandrill
 	 */
@@ -17,7 +21,10 @@ class Mandrill
 	 */
 	private $config;
 
-	protected function initialize ()
+	/**
+	 *
+	 */
+	protected function initialize()
 	{
 
 	}
@@ -26,20 +33,28 @@ class Mandrill
 	 * @param array $config
 	 * @return self
 	 */
-	public function setFromConfig (array $config)
+	public function setFromConfig(array $config)
 	{
 		$this->config = $config;
 		$this->mandrill = new \Mandrill ($this->config['key']);
 		return $this;
 	}
 
-	private function getContact (Contact $contact) {
+	/**
+	 * @param Contact $contact
+	 * @return array
+	 */
+	private function getContact(Contact $contact) {
 		return array (
 			'email' => $contact->getEmail ()
 		);
 	}
 
-	private function getTo (Mail $mail) {
+	/**
+	 * @param Mail $mail
+	 * @return array
+	 */
+	private function getTo(Mail $mail) {
 		$out = array ();
 
 		foreach ($mail->getTo () as $to) {
@@ -49,7 +64,11 @@ class Mandrill
 		return $out;
 	}
 
-	private function getImages (Mail $mail) {
+	/**
+	 * @param Mail $mail
+	 * @return array
+	 */
+	private function getImages(Mail $mail) {
 
 		$out = array ();
 
@@ -65,7 +84,10 @@ class Mandrill
 
 	}
 
-	public function send (Mail $mail)
+	/**
+	 * @param Mail $mail
+	 */
+	public function send(Mail $mail)
 	{
 		$message = array (
 			'html' => $this->getBodyHTML ($mail),
@@ -74,6 +96,16 @@ class Mandrill
 			'from_email' => $mail->getFrom ()->getEmail (),
 			'images' => $this->getImages ($mail)
 		);
+
+		$headers = array();
+
+		if ($mail->getReplyTo()) {
+			$headers['Reply-To'] = $mail->getReplyTo()->getEmail();
+		}
+
+		if (count($headers) > 0) {
+			$message['headers'] = $headers;
+		}
 
 		$result = $this->mandrill->messages->send ($message);
 	}

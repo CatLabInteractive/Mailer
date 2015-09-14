@@ -6,7 +6,12 @@ use CatLab\Mailer\Collections\ContactCollection;
 use CatLab\Mailer\Collections\ImageCollection;
 use Neuron\Core\Template;
 
-class Mail {
+/**
+ * Class Mail
+ * @package CatLab\Mailer\Models
+ */
+class Mail
+{
 
 	/**
 	 * @var string
@@ -53,7 +58,12 @@ class Mail {
 	 */
 	private $images;
 
-	public function __construct ()
+	/**
+	 * @var Contact
+	 */
+	private $replyTo;
+
+	public function __construct()
 	{
 		$this->to = new ContactCollection ();
 		$this->cc = new ContactCollection ();
@@ -64,7 +74,7 @@ class Mail {
 	/**
 	 * @return string
 	 */
-	public function getSubject ()
+	public function getSubject()
 	{
 		return $this->subject;
 	}
@@ -73,7 +83,7 @@ class Mail {
 	 * @param string $subject
 	 * @return self
 	 */
-	public function setSubject ($subject)
+	public function setSubject($subject)
 	{
 		$this->subject = $subject;
 		return $this;
@@ -82,7 +92,7 @@ class Mail {
 	/**
 	 * @return string
 	 */
-	public function getBody ()
+	public function getBody()
 	{
 		return $this->body;
 	}
@@ -91,7 +101,7 @@ class Mail {
 	 * @param string $body
 	 * @return self
 	 */
-	public function setBody ($body)
+	public function setBody($body)
 	{
 		$this->body = $body;
 		return $this;
@@ -100,7 +110,7 @@ class Mail {
 	/**
 	 * @return string
 	 */
-	public function getText ()
+	public function getText()
 	{
 		return $this->text;
 	}
@@ -109,7 +119,7 @@ class Mail {
 	 * @param string $text
 	 * @return self
 	 */
-	public function setText ($text)
+	public function setText($text)
 	{
 		$this->text = $text;
 		return $this;
@@ -118,7 +128,7 @@ class Mail {
 	/**
 	 * @return Template
 	 */
-	public function getTemplate ()
+	public function getTemplate()
 	{
 		return $this->template;
 	}
@@ -127,7 +137,7 @@ class Mail {
 	 * @param Template $template
 	 * @return self
 	 */
-	public function setTemplate ($template)
+	public function setTemplate($template)
 	{
 		$this->template = $template;
 		return $this;
@@ -136,7 +146,7 @@ class Mail {
 	/**
 	 * @return ContactCollection
 	 */
-	public function getTo ()
+	public function getTo()
 	{
 		return $this->to;
 	}
@@ -145,7 +155,7 @@ class Mail {
 	 * @param ContactCollection $to
 	 * @return self
 	 */
-	public function setTo (ContactCollection $to)
+	public function setTo(ContactCollection $to)
 	{
 		$this->to = $to;
 		return $this;
@@ -154,7 +164,7 @@ class Mail {
 	/**
 	 * @return ContactCollection
 	 */
-	public function getCc ()
+	public function getCc()
 	{
 		return $this->cc;
 	}
@@ -163,7 +173,7 @@ class Mail {
 	 * @param ContactCollection $cc
 	 * @return self
 	 */
-	public function setCc (ContactCollection $cc)
+	public function setCc(ContactCollection $cc)
 	{
 		$this->cc = $cc;
 		return $this;
@@ -172,7 +182,7 @@ class Mail {
 	/**
 	 * @return ContactCollection
 	 */
-	public function getBcc ()
+	public function getBcc()
 	{
 		return $this->bcc;
 	}
@@ -181,7 +191,7 @@ class Mail {
 	 * @param ContactCollection $bcc
 	 * @return self
 	 */
-	public function setBcc (ContactCollection $bcc)
+	public function setBcc(ContactCollection $bcc)
 	{
 		$this->bcc = $bcc;
 		return $this;
@@ -190,7 +200,7 @@ class Mail {
 	/**
 	 * @return Contact
 	 */
-	public function getFrom ()
+	public function getFrom()
 	{
 		return $this->from;
 	}
@@ -199,7 +209,7 @@ class Mail {
 	 * @param Contact $from
 	 * @return self
 	 */
-	public function setFrom ($from)
+	public function setFrom($from)
 	{
 		$from = Contact::fromMixed ($from);
 
@@ -210,7 +220,7 @@ class Mail {
 	/**
 	 * @return ImageCollection
 	 */
-	public function getImages ()
+	public function getImages()
 	{
 		return $this->images;
 	}
@@ -219,9 +229,27 @@ class Mail {
 	 * @param ImageCollection $images
 	 * @return self
 	 */
-	public function setImages ($images)
+	public function setImages($images)
 	{
 		$this->images = $images;
+		return $this;
+	}
+
+	/**
+	 * @return Contact
+	 */
+	public function getReplyTo()
+	{
+		return $this->replyTo;
+	}
+
+	/**
+	 * @param Contact $replyTo
+	 * @return self
+	 */
+	public function setReplyTo($replyTo)
+	{
+		$this->replyTo = $replyTo;
 		return $this;
 	}
 }

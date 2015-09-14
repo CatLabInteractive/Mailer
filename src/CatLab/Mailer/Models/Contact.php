@@ -1,15 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: daedeloth
- * Date: 31/05/15
- * Time: 11:09
- */
 
 namespace CatLab\Mailer\Models;
 
-class Contact {
-
+/**
+ * Class Contact
+ * @package CatLab\Mailer\Models
+ */
+class Contact
+{
 	/**
 	 * @param mixed $email
 	 * @return mixed
@@ -30,10 +28,13 @@ class Contact {
 	/** @var string */
 	private $email;
 
+	/** @var string */
+	private $name;
+
 	/**
 	 * @return string
 	 */
-	public function getEmail ()
+	public function getEmail()
 	{
 		return $this->email;
 	}
@@ -42,10 +43,27 @@ class Contact {
 	 * @param string $email
 	 * @return self
 	 */
-	public function setEmail ($email)
+	public function setEmail($email)
 	{
 		$this->email = $email;
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
+	public function getName ()
+	{
+		return $this->name;
+	}
+
+	/**
+	 * @param string $name
+	 * @return self
+	 */
+	public function setName ($name)
+	{
+		$this->name = $name;
+		return $this;
+	}
 }
