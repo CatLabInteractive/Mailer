@@ -2,6 +2,7 @@
 
 namespace CatLab\Mailer\Services;
 
+use CatLab\Mailer\Exceptions\MailException;
 use CatLab\Mailer\Models\Contact;
 use CatLab\Mailer\Models\Mail;
 
@@ -44,7 +45,8 @@ class Mandrill extends Service
 	 * @param Contact $contact
 	 * @return array
 	 */
-	private function getContact(Contact $contact) {
+	private function getContact(Contact $contact)
+	{
 		return array (
 			'email' => $contact->getEmail ()
 		);
@@ -54,7 +56,8 @@ class Mandrill extends Service
 	 * @param Mail $mail
 	 * @return array
 	 */
-	private function getTo(Mail $mail) {
+	private function getTo(Mail $mail)
+	{
 		$out = array ();
 
 		foreach ($mail->getTo () as $to) {
@@ -68,8 +71,8 @@ class Mandrill extends Service
 	 * @param Mail $mail
 	 * @return array
 	 */
-	private function getImages(Mail $mail) {
-
+	private function getImages(Mail $mail)
+	{
 		$out = array ();
 
 		foreach ($mail->getImages () as $image) {
@@ -81,20 +84,29 @@ class Mandrill extends Service
 		}
 
 		return $out;
-
 	}
 
 	/**
 	 * @param Mail $mail
+	 * @throws MailException
 	 */
 	public function send(Mail $mail)
 	{
+		$body = $mail->getHtmlOrText();
+
 		$message = array (
-			'html' => $this->getBodyHTML ($mail),
-			'subject' => $mail->getSubject (),
-			'to' => $this->getTo ($mail),
-			'images' => $this->getImages ($mail)
+			'subject' => $mail->getSubject(),
+			'to' => $this->getTo($mail),
+			'images' => $this->getImages($mail)
 		);
+
+		if ($mail->isHTML()) {
+			$message['html'] = $body;
+		}
+
+		if ($text = $mail->getText()) {
+			$message['text'] = $text;
+		}
 
 		if ($mail->getFrom()) {
 			$message['from_email'] = $mail->getFrom()->getEmail();
@@ -102,6 +114,8 @@ class Mandrill extends Service
 			if ($mail->getFrom()->getName()) {
 				$message['from_name'] = $mail->getFrom()->getName();
 			}
+		} else {
+			throw new MailException("Mandrill requires a FROM email address to be set.");
 		}
 
 		$headers = array();

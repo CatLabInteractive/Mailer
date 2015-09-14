@@ -63,6 +63,11 @@ class Mail
 	 */
 	private $replyTo;
 
+	/**
+	 * @var boolean
+	 */
+	private $isHTML;
+
 	public function __construct()
 	{
 		$this->to = new ContactCollection ();
@@ -105,6 +110,28 @@ class Mail
 	{
 		$this->body = $body;
 		return $this;
+	}
+
+	/**
+	 * Return the html body or the text string, and fill in the isHTML property
+	 * @return string
+	 */
+	public function getHtmlOrText()
+	{
+		if ($template = $this->getTemplate ()) {
+			if (!isset ($this->isHTML))
+				$this->setIsHTML(true);
+			return $template->parse ();
+		} else if ($body = $this->getBody ()) {
+			$this->setIsHTML(true);
+			return $body;
+		} else if ($text = $this->getText ()) {
+			$this->setIsHTML(false);
+			return $text;
+		}
+
+		$this->setIsHTML(false);
+		return 'No body set.';
 	}
 
 	/**
@@ -250,6 +277,24 @@ class Mail
 	public function setReplyTo($replyTo)
 	{
 		$this->replyTo = $replyTo;
+		return $this;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function isHTML ()
+	{
+		return $this->isHTML;
+	}
+
+	/**
+	 * @param boolean $isHTML
+	 * @return self
+	 */
+	public function setIsHTML ($isHTML)
+	{
+		$this->isHTML = $isHTML;
 		return $this;
 	}
 }
