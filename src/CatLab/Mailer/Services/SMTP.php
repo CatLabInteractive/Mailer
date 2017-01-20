@@ -76,7 +76,7 @@ class SMTP extends Service
         $mail->isHTML($sourceMail->isHTML());                                  // Set email format to HTML
 
         $mail->Subject = $sourceMail->getSubject();
-        $mail->Body = $sourceMail->getBody();
+        $mail->Body = $sourceMail->getHtmlOrText();
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         if(!$mail->send()) {
