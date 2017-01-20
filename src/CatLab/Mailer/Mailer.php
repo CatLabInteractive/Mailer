@@ -40,6 +40,7 @@ class Mailer
 		$mailer = self::getInstance();
 
 		$services = Config::get ('mailer.services');
+
 		if (!$services) {
 			return $mailer;
 		}
