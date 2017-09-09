@@ -73,6 +73,10 @@ class SMTP extends Service
             $mail->addAttachment($image->getPath(), $image->getName(), 'base64', $image->getMimeType());
         }
 
+        if ($sourceMail->getReplyTo()) {
+            $mail->addReplyTo($sourceMail->getReplyTo()->getEmail(), $sourceMail->getReplyTo()->getName());
+        }
+
         $mail->isHTML($sourceMail->isHTML());                                  // Set email format to HTML
 
         $mail->Subject = $sourceMail->getSubject();
