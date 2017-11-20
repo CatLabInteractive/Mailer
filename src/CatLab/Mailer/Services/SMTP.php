@@ -87,7 +87,5 @@ class SMTP extends Service
         if(!$mail->send()) {
             throw new MailException($mail->ErrorInfo);
         }
-
-        var_dump($sourceMail->getHtmlOrText());
 	}
 }
