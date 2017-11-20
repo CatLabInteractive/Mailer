@@ -46,6 +46,7 @@ class SMTP extends Service
 
         //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
+        $mail->CharSet = "UTF-8";
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = $this->config['server'];  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -86,5 +87,7 @@ class SMTP extends Service
         if(!$mail->send()) {
             throw new MailException($mail->ErrorInfo);
         }
+
+        var_dump($sourceMail->getHtmlOrText());
 	}
 }
