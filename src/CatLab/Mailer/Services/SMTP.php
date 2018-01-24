@@ -85,7 +85,6 @@ class SMTP extends Service
 
         $mail->Subject = $subject;
         $mail->Body = $body;
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         if(!$mail->send()) {
             throw new MailException($mail->ErrorInfo);
