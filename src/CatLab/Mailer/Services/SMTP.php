@@ -77,10 +77,13 @@ class SMTP extends Service
             $mail->addReplyTo($sourceMail->getReplyTo()->getEmail(), $sourceMail->getReplyTo()->getName());
         }
 
+        $body = $sourceMail->getHtmlOrText();
+        $subject = $sourceMail->getSubject();
+
         $mail->isHTML($sourceMail->isHTML());                                  // Set email format to HTML
 
-        $mail->Subject = $sourceMail->getSubject();
-        $mail->Body = $sourceMail->getHtmlOrText();
+        $mail->Subject = $subject;
+        $mail->Body = $body;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         if(!$mail->send()) {
