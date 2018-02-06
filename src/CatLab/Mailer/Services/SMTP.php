@@ -48,7 +48,11 @@ class SMTP extends Service
 
         $mail->CharSet = "UTF-8";
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = $this->config['server'];  // Specify main and backup SMTP servers
+
+        // force ipv4
+        $mail->Host = gethostbyname($this->config['server']);  // Specify main and backup SMTP servers
+        $mail->SMTPOptions = array('ssl' => array('verify_peer_name' => false));
+
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         $mail->Username = $this->config['username'];                 // SMTP username
         $mail->Password = $this->config['password'];                           // SMTP password
