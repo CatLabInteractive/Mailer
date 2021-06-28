@@ -7,7 +7,7 @@
   "license": "MIT",
 
   "require": {
-    "catlabinteractive/neuron": "2.*",
+    "catlabinteractive/neuron": "3.*",
 	"mandrill/mandrill": "1.0.*",
     "phpmailer/phpmailer": "^5.2"
   },
