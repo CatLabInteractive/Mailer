@@ -129,5 +129,7 @@ class Mandrill extends Service
 		}
 
 		$result = $this->mandrill->messages->send ($message);
+
+        return true;
 	}
 }

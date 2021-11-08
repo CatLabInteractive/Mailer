@@ -96,6 +96,8 @@ class SMTP extends Service
             if (!$mail->send()) {
                 throw new MailException($mail->ErrorInfo);
             }
+
+            return true;
         } catch (phpmailerException $e) {
             throw new MailException($e->getMessage(), $e->getCode(), $e);
         }
