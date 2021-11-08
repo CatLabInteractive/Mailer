@@ -7,6 +7,7 @@ use CatLab\Mailer\Models\Contact;
 use CatLab\Mailer\Models\Image;
 use CatLab\Mailer\Models\Mail;
 use PHPMailer;
+use phpmailerException;
 
 /**
  * Class SNTP
@@ -42,56 +43,61 @@ class SMTP extends Service
 	 */
 	public function send(Mail $sourceMail)
 	{
-        $mail = new PHPMailer;
 
-        //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+        try {
+            $mail = new PHPMailer;
 
-        $mail->CharSet = "UTF-8";
-        $mail->isSMTP();                                      // Set mailer to use SMTP
+            //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
-        // force ipv4
-        $mail->Host = gethostbyname($this->config['server']);  // Specify main and backup SMTP servers
-        $mail->SMTPOptions = array('ssl' => array('verify_peer_name' => false));
+            $mail->CharSet = "UTF-8";
+            $mail->isSMTP();                                      // Set mailer to use SMTP
 
-        $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = $this->config['username'];                 // SMTP username
-        $mail->Password = $this->config['password'];                           // SMTP password
-        $mail->SMTPSecure = $this->config['security'];                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = $this->config['port'];                                    // TCP port to connect to
+            // force ipv4
+            $mail->Host = gethostbyname($this->config['server']);  // Specify main and backup SMTP servers
+            $mail->SMTPOptions = array('ssl' => array('verify_peer_name' => false));
 
-        $mail->setFrom($sourceMail->getFrom()->getEmail(), $sourceMail->getFrom()->getName());
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = $this->config['username'];                 // SMTP username
+            $mail->Password = $this->config['password'];                           // SMTP password
+            $mail->SMTPSecure = $this->config['security'];                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = $this->config['port'];                                    // TCP port to connect to
 
-        foreach ($sourceMail->getTo() as $v) {
-            $mail->addAddress($v->getEmail(), $v->getName());
-        }
+            $mail->setFrom($sourceMail->getFrom()->getEmail(), $sourceMail->getFrom()->getName());
 
-        foreach ($sourceMail->getCc() as $v) {
-            $mail->addCC($v->getEmail(), $v->getName());
-        }
+            foreach ($sourceMail->getTo() as $v) {
+                $mail->addAddress($v->getEmail(), $v->getName());
+            }
 
-        foreach ($sourceMail->getBcc() as $v) {
-            $mail->addBCC($v->getEmail(), $v->getName());
-        }
+            foreach ($sourceMail->getCc() as $v) {
+                $mail->addCC($v->getEmail(), $v->getName());
+            }
 
-        foreach ($sourceMail->getImages() as $image) {
-            /** @var Image $image */
-            $mail->addAttachment($image->getPath(), $image->getName(), 'base64', $image->getMimeType());
-        }
+            foreach ($sourceMail->getBcc() as $v) {
+                $mail->addBCC($v->getEmail(), $v->getName());
+            }
 
-        if ($sourceMail->getReplyTo()) {
-            $mail->addReplyTo($sourceMail->getReplyTo()->getEmail(), $sourceMail->getReplyTo()->getName());
-        }
+            foreach ($sourceMail->getImages() as $image) {
+                /** @var Image $image */
+                $mail->addAttachment($image->getPath(), $image->getName(), 'base64', $image->getMimeType());
+            }
 
-        $body = $sourceMail->getHtmlOrText();
-        $subject = $sourceMail->getSubject();
+            if ($sourceMail->getReplyTo()) {
+                $mail->addReplyTo($sourceMail->getReplyTo()->getEmail(), $sourceMail->getReplyTo()->getName());
+            }
 
-        $mail->isHTML($sourceMail->isHTML());                                  // Set email format to HTML
+            $body = $sourceMail->getHtmlOrText();
+            $subject = $sourceMail->getSubject();
 
-        $mail->Subject = $subject;
-        $mail->Body = $body;
+            $mail->isHTML($sourceMail->isHTML());                                  // Set email format to HTML
 
-        if(!$mail->send()) {
-            throw new MailException($mail->ErrorInfo);
+            $mail->Subject = $subject;
+            $mail->Body = $body;
+
+            if (!$mail->send()) {
+                throw new MailException($mail->ErrorInfo);
+            }
+        } catch (phpmailerException $e) {
+            throw new MailException($e->getMessage(), $e->getCode(), $e);
         }
 	}
 }

@@ -31,10 +31,11 @@ class Mailer
 		$this->services = new ServiceCollection ();
 	}
 
-	/**
-	 * Return mailer (with services) from config.
-	 * @return Mailer
-	 */
+    /**
+     * Return mailer (with services) from config.
+     * @return Mailer
+     * @throws MailException
+     */
 	public static function fromConfig()
 	{
 		$mailer = self::getInstance();
@@ -46,7 +47,15 @@ class Mailer
 		}
 
 		foreach ($services as $k => $v) {
-			$service = MapperFactory::getServiceMapper()->getFromToken($k);
+
+            if (isset($v['token'])) {
+                $service = MapperFactory::getServiceMapper()->getFromToken($v['token']);
+            } elseif (is_string($k)) {
+                $service = MapperFactory::getServiceMapper()->getFromToken($k);
+            } else {
+                throw new MailException("Could not initialize mailer: " . print_r($v, true));
+            }
+
 			if ($service) {
 				$service->setFromConfig ($v);
 				$mailer->addService ($service);
@@ -91,13 +100,24 @@ class Mailer
 	 */
 	public function send(Mail $mail)
 	{
-		if (count ($this->getServices()) === 0)
-			throw new NoServices ();
+		if (count ($this->getServices()) === 0) {
+            throw new NoServices ();
+        }
 
+        $error = null;
 		foreach ($this->getServices() as $service) {
-			if ($service->send ($mail)) {
-				return;
-			}
+            try {
+                if ($service->send($mail)) {
+                    return;
+                }
+            } catch (MailException $e) {
+                $error = $e;
+                error_log($e->getMessage());
+            }
 		}
+
+        if ($error) {
+            throw $error;
+        }
 	}
 }
