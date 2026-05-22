@@ -2,7 +2,6 @@
 
 namespace CatLab\Mailer\Mappers;
 
-use CatLab\Mailer\Services\Mandrill;
 use CatLab\Mailer\Services\Service;
 use CatLab\Mailer\Services\SMTP;
 
@@ -12,7 +11,6 @@ use CatLab\Mailer\Services\SMTP;
  */
 class ServiceMapper
 {
-    const TOKEN_MANDRILL = 'mandrill';
     const TOKEN_SMTP = 'smtp';
 
     /**
@@ -22,9 +20,6 @@ class ServiceMapper
     public function getFromToken($token)
     {
         switch ($token) {
-            case self::TOKEN_MANDRILL:
-                return new Mandrill();
-
             case self::TOKEN_SMTP:
                 return new SMTP();
         }

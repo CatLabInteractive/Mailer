@@ -8,7 +8,6 @@
 
   "require": {
     "catlabinteractive/neuron": "3.*",
-	"mandrill/mandrill": "1.0.*",
     "phpmailer/phpmailer": "^5.2"
   },
 
