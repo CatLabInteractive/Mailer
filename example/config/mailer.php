@@ -3,9 +3,10 @@
 return array (
 
 	'services' => array (
-		'mandrill' => array (
+		'smtp' => array (
+			'host' => 'smtp.example.com',
 			'username' => 'your username here',
-			'key' => 'abcdef'
+			'password' => 'your password here'
 		)
 	)
 
