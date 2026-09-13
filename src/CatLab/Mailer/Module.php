@@ -16,7 +16,7 @@ class Module
 	 */
 	private $mailer;
 
-	public function __construct (Mailer $mailer = null)
+	public function __construct (?Mailer $mailer = null)
 	{
 		if (!isset ($mailer)) {
 			$mailer = Mailer::fromConfig ();
