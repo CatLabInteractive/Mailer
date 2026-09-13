@@ -7,8 +7,9 @@
   "license": "MIT",
 
   "require": {
+    "php": ">=7.4",
     "catlabinteractive/neuron": "3.*",
-    "phpmailer/phpmailer": "^5.2"
+    "phpmailer/phpmailer": "^6.9 || ^7.0"
   },
 
   "authors" : [
