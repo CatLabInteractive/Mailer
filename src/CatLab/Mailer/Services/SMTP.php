@@ -6,8 +6,8 @@ use CatLab\Mailer\Exceptions\MailException;
 use CatLab\Mailer\Models\Contact;
 use CatLab\Mailer\Models\Image;
 use CatLab\Mailer\Models\Mail;
-use PHPMailer;
-use phpmailerException;
+use PHPMailer\PHPMailer\Exception as PHPMailerException;
+use PHPMailer\PHPMailer\PHPMailer;
 
 /**
  * Class SNTP
@@ -98,7 +98,7 @@ class SMTP extends Service
             }
 
             return true;
-        } catch (phpmailerException $e) {
+        } catch (PHPMailerException $e) {
             throw new MailException($e->getMessage(), $e->getCode(), $e);
         }
 	}
