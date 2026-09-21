@@ -1,0 +1,56 @@
+name: Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php-version: '7.4'
+            dependencies: lowest
+          - php-version: '7.4'
+            dependencies: highest
+          - php-version: '8.5'
+            dependencies: highest
+
+    name: PHP ${{ matrix.php-version }} (${{ matrix.dependencies }})
+
+    services:
+      mailpit:
+        image: axllent/mailpit
+        env:
+          MP_SMTP_AUTH_ACCEPT_ANY: 1
+          MP_SMTP_AUTH_ALLOW_INSECURE: 1
+        ports:
+          - 1025:1025
+          - 8025:8025
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-progress ${{ matrix.dependencies == 'lowest' && '--prefer-lowest' || '' }}
+
+      - name: Lint
+        run: for f in $(find src tests -name '*.php'); do php -d error_reporting=-1 -d display_errors=1 -l "$f" | grep -v '^No syntax errors' && exit 1; done; true
+
+      - name: Run tests
+        env:
+          MAILPIT_HOST: 127.0.0.1
+        run: vendor/bin/phpunit
